@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Gavi ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #120b0e;
+    color: #fff7f5;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   OPENING
+========================================================= */
+
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background:
+        radial-gradient(circle at 80% 20%, rgba(255,72,122,.18), transparent 30%),
+        radial-gradient(circle at 15% 80%, rgba(170,25,66,.25), transparent 35%),
+        #120b0e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.opening-noise {
+    position: absolute;
+    inset: 0;
+    opacity: .08;
+    pointer-events: none;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+}
+
+.opening-content {
+    width: min(1200px, 90%);
+    position: relative;
+    z-index: 2;
+}
+
+.mini-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ff7198;
+    margin-bottom: 25px;
+}
+
+.opening-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(65px, 13vw, 190px);
+    line-height: .78;
+    font-weight: 500;
+    letter-spacing: -8px;
+}
+
+.opening-title em {
+    color: #ff4779;
+    font-weight: 400;
+}
+
+.opening-bottom {
+    margin-top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.opening-sub {
+    font-size: 14px;
+    max-width: 320px;
+    line-height: 1.7;
+    color: #cdbfc2;
+}
+
+.open-button {
+    border: 1px solid #ff4779;
+    background: #ff4779;
+    color: #180b10;
+
+    padding: 19px 30px;
+
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.open-button:hover {
+    background: transparent;
+    color: #ff4779;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+#mainContent {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 6vw;
+}
+
+.hero-image {
+    position: absolute;
+    right: 5%;
+    top: 8%;
+    width: min(48vw, 650px);
+    height: 75vh;
+
+    object-fit: cover;
+
+    filter: saturate(.85) contrast(1.05);
+
+    transform: rotate(3deg);
+
+    box-shadow:
+        30px 30px 0 #ff4779,
+        -20px -20px 0 #3b1b26;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #120b0e 0%,
+            #120b0e 38%,
+            rgba(18,11,14,.7) 55%,
+            rgba(18,11,14,.05) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 65%;
+}
+
+.eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #ff7198;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+
+    font-size: clamp(70px, 10vw, 150px);
+
+    line-height: .82;
+    letter-spacing: -6px;
+}
+
+.hero h1 span {
+    color: #ff4779;
+    font-style: italic;
+}
+
+.hero-copy {
+    margin-top: 45px;
+    max-width: 400px;
+
+    color: #cdbfc2;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hero-number {
+    position: absolute;
+    bottom: 35px;
+    left: 6vw;
+
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    color: #735c64;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee {
+    overflow: hidden;
+    background: #ff4779;
+    color: #180b10;
+    border-top: 1px solid #ff4779;
+    border-bottom: 1px solid #ff4779;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+
+    animation: marquee 20s linear infinite;
+
+    padding: 18px 0;
+}
+
+.marquee span {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-style: italic;
+    margin-right: 40px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   SECTION BASE
+========================================================= */
+
+.section {
+    padding: 150px 7vw;
+    position: relative;
+}
+
+.section-number {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #ff4779;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.section-heading {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 8vw, 120px);
+    line-height: .9;
+    font-weight: 500;
+    letter-spacing: -4px;
+}
+
+.section-heading em {
+    color: #ff4779;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-section {
+    background: #f6e9e8;
+    color: #251317;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.letter-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.5fr;
+    gap: 9vw;
+    align-items: center;
+}
+
+.letter-intro .section-number {
+    color: #b63257;
+}
+
+.letter-intro h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: .88;
+    letter-spacing: -4px;
+}
+
+.letter-paper {
+    background: #fffdf9;
+
+    padding: clamp(35px, 6vw, 75px);
+
+    box-shadow:
+        18px 18px 0 #d94b6c,
+        0 20px 70px rgba(50,20,25,.18);
+
+    transform: rotate(-1.2deg);
+
+    position: relative;
+}
+
+.letter-paper::before {
+    content: "FOR GAVI ♡";
+
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #b63257;
+}
+
+.letter-paper p {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(17px, 1.7vw, 23px);
+    line-height: 1.75;
+    margin-bottom: 25px;
+}
+
+.signature {
+    margin-top: 40px;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-style: italic;
+}
+
+
+/* =========================================================
+   THINGS I LOVE
+========================================================= */
+
+.love-section {
+    background: #120b0e;
+}
+
+.love-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 100px;
+}
+
+.love-header p {
+    width: 250px;
+    color: #a8959a;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.love-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.love-card {
+    min-height: 300px;
+
+    padding: 35px;
+
+    border: 1px solid #38252b;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: .4s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.love-card:hover {
+    background: #ff4779;
+    color: #180b10;
+    transform: translateY(-8px);
+}
+
+.love-card-number {
+    font-size: 11px;
+    color: #ff4779;
+    letter-spacing: 3px;
+}
+
+.love-card:hover .love-card-number {
+    color: #180b10;
+}
+
+.love-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    line-height: .95;
+}
+
+.love-card p {
+    color: #9d898f;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 230px;
+}
+
+.love-card:hover p {
+    color: #3b151f;
+}
+
+
+/* =========================================================
+   PHOTO COLLAGE
+========================================================= */
+
+.photos-section {
+    background: #261217;
+    overflow: hidden;
+}
+
+.photo-intro {
+    margin-bottom: 100px;
+}
+
+.photo-intro h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(60px, 10vw, 150px);
+    line-height: .8;
+    letter-spacing: -7px;
+}
+
+.photo-intro h2 span {
+    color: #ff4779;
+    font-style: italic;
+}
+
+.photo-collage {
+    position: relative;
+    min-height: 1500px;
+    width: 100%;
+}
+
+.photo {
+    position: absolute;
+
+    background: #fff;
+
+    padding: 12px 12px 45px;
+
+    box-shadow: 0 30px 70px rgba(0,0,0,.35);
+
+    transition: .5s ease;
+
+    cursor: pointer;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.06) !important;
+    z-index: 20;
+}
+
+.photo::after {
+    position: absolute;
+    bottom: 12px;
+    left: 15px;
+
+    font-family: "Playfair Display", serif;
+    color: #251317;
+    font-size: 15px;
+}
+
+.photo1 {
+    width: 330px;
+    height: 410px;
+    left: 4%;
+    top: 50px;
+    transform: rotate(-7deg);
+}
+
+.photo1::after { content: "my favourite person"; }
+
+.photo2 {
+    width: 430px;
+    height: 530px;
+    left: 32%;
+    top: 180px;
+    transform: rotate(4deg);
+}
+
+.photo2::after { content: "♡"; }
+
+.photo3 {
+    width: 290px;
+    height: 360px;
+    right: 5%;
+    top: 30px;
+    transform: rotate(8deg);
+}
+
+.photo3::after { content: "that smile"; }
+
+.photo4 {
+    width: 350px;
+    height: 440px;
+    left: 8%;
+    top: 620px;
+    transform: rotate(5deg);
+}
+
+.photo4::after { content: "us"; }
+
+.photo5 {
+    width: 300px;
+    height: 380px;
+    left: 43%;
+    top: 760px;
+    transform: rotate(-6deg);
+}
+
+.photo5::after { content: "my boy"; }
+
+.photo6 {
+    width: 390px;
+    height: 480px;
+    right: 5%;
+    top: 570px;
+    transform: rotate(-4deg);
+}
+
+.photo6::after { content: "always"; }
+
+.photo7 {
+    width: 310px;
+    height: 390px;
+    left: 23%;
+    top: 1050px;
+    transform: rotate(7deg);
+}
+
+.photo7::after { content: "you + me"; }
+
+.photo8 {
+    width: 420px;
+    height: 520px;
+    right: 14%;
+    top: 1010px;
+    transform: rotate(-5deg);
+}
+
+.photo8::after { content: "forever ♡"; }
+
+
+/* =========================================================
+   BIG STATEMENT
+========================================================= */
+
+.statement {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #ff4779;
+    color: #180b10;
+
+    padding: 100px 6vw;
+}
+
+.statement h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(65px, 11vw, 170px);
+    line-height: .78;
+    letter-spacing: -7px;
+}
+
+.statement h2 em {
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   CERTIFICATE
+========================================================= */
+
+.certificate-section {
+    background: #f6e9e8;
+    color: #251317;
+}
+
+.certificate {
+    max-width: 1000px;
+    margin: auto;
+
+    border: 2px solid #251317;
+
+    padding: 70px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 25px,
+            rgba(255,255,255,.4) 25px
+        );
+
+    box-shadow: 20px 20px 0 #d94b6c;
+}
+
+.certificate-top {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.certificate h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    text-align: center;
+
+    margin: 90px 0 25px;
+
+    line-height: .85;
+}
+
+.certificate-sub {
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.certificate-text {
+    max-width: 650px;
+    margin: 60px auto;
+
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.certificate-details {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    border-top: 1px solid #251317;
+    border-bottom: 1px solid #251317;
+
+    padding: 25px 0;
+
+    text-align: center;
+}
+
+.certificate-details strong {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.certificate-details span {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+.certificate-sign {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-top: 70px;
+}
+
+.signature-big {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 35px;
+}
+
+.stamp {
+    width: 100px;
+    height: 100px;
+
+    border: 2px solid #b63257;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #b63257;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transform: rotate(-12deg);
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-section {
+    min-height: 80vh;
+
+    background: #120b0e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.music-card {
+    width: min(700px, 90%);
+
+    border: 1px solid #493139;
+
+    padding: 70px 40px;
+
+    position: relative;
+}
+
+.music-label {
+    color: #ff4779;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.music-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .9;
+
+    margin: 30px 0;
+}
+
+.music-card p {
+    color: #a8959a;
+    margin-bottom: 35px;
+}
+
+.music-button {
+    background: #ff4779;
+    color: #180b10;
+
+    border: none;
+
+    padding: 18px 30px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    transition: .3s;
+}
+
+.music-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final {
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.final img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(.35) saturate(.8);
+}
+
+.final-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent,
+            rgba(18,11,14,.9)
+        );
+}
+
+.final-content {
+    position: relative;
+    z-index: 2;
+}
+
+.final-small {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: #ff7198;
+
+    margin-bottom: 25px;
+}
+
+.final h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(70px, 13vw, 190px);
+
+    line-height: .75;
+
+    letter-spacing: -8px;
+}
+
+.final h2 span {
+    color: #ff4779;
+    font-style: italic;
+}
+
+.final p {
+    margin-top: 45px;
+    color: #d6c9cc;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 30px 7vw;
+
+    background: #0a0608;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #6f5c62;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+.heart {
+    position: fixed;
+
+    z-index: 999;
+
+    color: #ff4779;
+
+    pointer-events: none;
+
+    animation: floatHeart linear forwards;
+
+    text-shadow: 0 0 15px rgba(255,71,121,.4);
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .opening-title {
+        letter-spacing: -4px;
+    }
+
+    .opening-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 80px 7vw;
+        align-items: end;
+    }
+
+    .hero-image {
+        width: 75vw;
+        height: 60vh;
+
+        right: 5%;
+        top: 7%;
+
+        opacity: .65;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                0deg,
+                #120b0e 10%,
+                rgba(18,11,14,.75) 55%,
+                rgba(18,11,14,.15)
+            );
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .letter-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .love-header {
+        flex-direction: column;
+        align-items: start;
+        gap: 30px;
+    }
+
+    .love-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-collage {
+        min-height: 1200px;
+    }
+
+    .photo {
+        width: 45vw !important;
+        height: 55vw !important;
+    }
+
+    .photo1 {
+        left: 0;
+    }
+
+    .photo2 {
+        left: 28%;
+        top: 150px;
+    }
+
+    .photo3 {
+        right: 0;
+        top: 420px;
+    }
+
+    .photo4 {
+        left: 5%;
+        top: 500px;
+    }
+
+    .photo5 {
+        left: 42%;
+        top: 650px;
+    }
+
+    .photo6 {
+        right: 0;
+        top: 790px;
+    }
+
+    .photo7 {
+        left: 5%;
+        top: 900px;
+    }
+
+    .photo8 {
+        display: none;
+    }
+
+    .certificate {
+        padding: 35px 20px;
+    }
+
+    .certificate h2 {
+        margin-top: 60px;
+    }
+
+    .certificate-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .certificate-sign {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<section id="opening">
+
+    <div class="opening-noise"></div>
+
+    <div class="opening-content">
+
+        <div class="mini-label">
+            A LITTLE SOMETHING FROM JIYU
+        </div>
+
+        <h1 class="opening-title">
+            FOR<br>
+            <em>GAVI.</em>
+        </h1>
+
+        <div class="opening-bottom">
+
+            <p class="opening-sub">
+                I made this because apparently saying
+                everything I feel in one normal message
+                wasn't enough.
+            </p>
+
+            <button
+                class="open-button"
+                onclick="openSite()"
+            >
+                Open it ♡
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<main id="mainContent">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <img
+        class="hero-image"
+        src="assets/photo2.jpeg.jpeg"
+        alt="Gavi"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            BOYFRIEND'S DAY / 2026
+        </div>
+
+        <h1>
+            HAPPY<br>
+            BOYFRIEND'S<br>
+            <span>DAY.</span>
+        </h1>
+
+        <p class="hero-copy">
+            To the boy who somehow became my favourite
+            person, my safest place, and the person I
+            want to annoy for the rest of my life.
+        </p>
+
+    </div>
+
+    <div class="hero-number">
+        01 — 08
+    </div>
+
+</section>
+
+
+<!-- MARQUEE -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <span>GAVI ♡</span>
+        <span>MY FAVOURITE PERSON</span>
+        <span>GAVI ♡</span>
+        <span>MY FAVOURITE PERSON</span>
+        <span>GAVI ♡</span>
+        <span>MY FAVOURITE PERSON</span>
+        <span>GAVI ♡</span>
+        <span>MY FAVOURITE PERSON</span>
+
+    </div>
+
+</div>
+
+
+<!-- LETTER -->
+
+<section class="section letter-section">
+
+    <div class="letter-layout">
+
+        <div class="letter-intro">
+
+            <div class="section-number">
+                02 / THE LETTER
+            </div>
+
+            <h2>
+                Things I<br>
+                don't say<br>
+                <em>enough.</em>
+            </h2>
+
+        </div>
+
+
+        <div class="letter-paper">
+
+            <p>
+                Gavi,
+            </p>
+
+            <p>
+                I love you. And I know I don't say it enough,
+                but you make me the happiest person.
+            </p>
+
+            <p>
+                This one-and-something year with you has made
+                me the happiest I've ever been. You literally
+                light up my world. My heart smiles when I talk
+                to you, and your jokes — which are very bad,
+                by the way — somehow make me laugh very loudly.
+            </p>
+
+            <p>
+                I just love being in your presence.
+            </p>
+
+            <p>
+                I love the efforts you make for me, and
+                everything you do to make me feel loved.
+                I love how your brain works, how you overthink
+                every little thing, how you get sad over the
+                smallest things and the happiest over the
+                smallest things too.
+            </p>
+
+            <p>
+                I love that you feel everything so deeply.
+            </p>
+
+            <p>
+                You have genuinely made my year so much better
+                than I ever expected it to be, and I hope
+                you're my boyfriend, my husband, and my partner
+                in every lifetime.
+            </p>
+
+            <p>
+                I love being around you.
+            </p>
+
+            <p>
+                And I hope no other girl gets to be around you
+                like that. 🤭
+            </p>
+
+            <p>
+                I'll always love you.
+            </p>
+
+            <div class="signature">
+                Love,<br>
+                Jiyu ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- THINGS I LOVE -->
+
+<section class="section love-section">
+
+    <div class="love-header">
+
+        <div>
+
+            <div class="section-number">
+                03 / YOU
+            </div>
+
+            <h2 class="section-heading">
+                Things I<br>
+                <em>love</em> about you.
+            </h2>
+
+        </div>
+
+        <p>
+            There are approximately 7 billion people
+            on this planet and somehow I got attached
+            to this particular idiot.
+        </p>
+
+    </div>
+
+
+    <div class="love-grid">
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">01</div>
+
+            <h3>Your eyes.</h3>
+
+            <p>
+                I could literally look at them forever.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">02</div>
+
+            <h3>Your smile.</h3>
+
+            <p>
+                Especially that little sparkle in your eyes
+                when you smile.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">03</div>
+
+            <h3>Your hugs.</h3>
+
+            <p>
+                My favourite place, obviously.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">04</div>
+
+            <h3>The way you treat me.</h3>
+
+            <p>
+                You make me feel cared for in all
+                the little ways.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">05</div>
+
+            <h3>Your energy.</h3>
+
+            <p>
+                There is just something about you.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">06</div>
+
+            <h3>Your hair.</h3>
+
+            <p>
+                Yes. It deserves its own category.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">07</div>
+
+            <h3>Your hands.</h3>
+
+            <p>
+                I just really love them.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">08</div>
+
+            <h3>The way you love me.</h3>
+
+            <p>
+                And honestly, that might be my favourite
+                thing of all.
+            </p>
+
+        </div>
+
+
+        <div class="love-card">
+
+            <div class="love-card-number">09</div>
+
+            <h3>You.</h3>
+
+            <p>
+                I just love you. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTOS -->
+
+<section class="section photos-section">
+
+    <div class="photo-intro">
+
+        <div class="section-number">
+            04 / OUR CAMERA ROLL
+        </div>
+
+        <h2>
+            A little<br>
+            <span>proof.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="photo-collage">
+
+
+        <div class="photo photo1">
+            <img src="assets/photo1.jpeg.jpeg" alt="">
+        </div>
+
+
+        <div class="photo photo2">
+            <img src="assets/photo2.jpeg.jpeg" alt="">
+        </div>
+
+
+        <div class="photo photo3">
+            <img src="assets/photo3.jpeg.jpeg" alt="">
+        </div>
+
+
+        <div class="photo photo4">
+            <img src="assets/photo4.jpeg.jpeg" alt="">
+        </div>
+
+
+        <div class="photo photo5">
+            <img src="assets/photo5.jpeg.jpeg" alt="">
+        </div>
+
+
+        <div class="photo photo6">
+            <img src="assets/photo6.jpeg.jpeg" alt="">
+        </div>
+
+
+        <div class="photo photo7">
+            <img src="assets/photo7.jpeg.jpeg" alt="">
+        </div>
+
+
+        <div class="photo photo8">
+            <img src="assets/photo8.jpeg.jpeg" alt="">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- BIG STATEMENT -->
+
+<section class="statement">
+
+    <h2>
+        I choose<br>
+        <em>you.</em><br>
+        every time.
+    </h2>
+
+</section>
+
+
+<!-- CERTIFICATE -->
+
+<section class="section certificate-section">
+
+    <div class="section-number">
+        05 / OFFICIAL DOCUMENT
+    </div>
+
+
+    <div class="certificate">
+
+        <div class="certificate-top">
+
+            <span>
+                JIYU™
+            </span>
+
+            <span>
+                CERTIFICATE NO. 001
+            </span>
+
+        </div>
+
+
+        <h2>
+            GAVI
+        </h2>
+
+
+        <div class="certificate-sub">
+            has officially been appointed as
+        </div>
+
+
+        <h2 style="font-size: clamp(35px,5vw,65px); margin: 35px 0;">
+            JIYU'S BOYFRIEND
+        </h2>
+
+
+        <p class="certificate-text">
+
+            In recognition of exceptional performance in
+            making Jiyu smile, providing elite-level hugs,
+            making ordinary moments feel special, putting
+            effort into making her feel loved, and generally
+            being her favourite person.
+
+            <br><br>
+
+            This appointment includes unlimited hugs,
+            forehead kisses, listening to random stories,
+            tolerating questionable jokes, being someone's
+            favourite person, and being deeply, ridiculously,
+            permanently loved.
+
+        </p>
+
+
+        <div class="certificate-details">
+
+            <div>
+                <strong>Status</strong>
+                <span>Forever</span>
+            </div>
+
+            <div>
+                <strong>Valid</strong>
+                <span>Every Lifetime</span>
+            </div>
+
+            <div>
+                <strong>Issued By</strong>
+                <span>Jiyu ♡</span>
+            </div>
+
+        </div>
+
+
+        <div class="certificate-sign">
+
+            <div>
+
+                <div class="signature-big">
+                    Jiyu
+                </div>
+
+                <small>
+                    Chief Executive Girlfriend
+                </small>
+
+            </div>
+
+
+            <div class="stamp">
+                OFFICIALLY<br>
+                LOVED<br>
+                ♡
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section class="music-section">
+
+    <div class="music-card">
+
+        <div class="music-label">
+            06 / PRESS PLAY
+        </div>
+
+        <h2>
+            Our little<br>
+            soundtrack.
+        </h2>
+
+        <p>
+            I Think They Call This Love ♡
+        </p>
+
+        <audio id="song">
+            <source src="assets/song.mp3" type="audio/mpeg">
+        </audio>
+
+        <button
+            class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()"
+        >
+            ▶ Play our song
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <img
+        src="assets/photo8.jpeg.jpeg"
+        alt=""
+    >
+
+    <div class="final-overlay"></div>
+
+
+    <div class="final-content">
+
+        <div class="final-small">
+            AND FINALLY...
+        </div>
+
+        <h2>
+            I LOVE<br>
+            <span>YOU.</span>
+        </h2>
+
+        <p>
+            Happy Boyfriend's Day, Gavi. ♡
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <span>
+        Made with love by Jiyu
+    </span>
+
+    <span>
+        Gavi ♡ Jiyu
+    </span>
+
+</footer>
+
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   OPEN WEBSITE
+========================================================= */
+
+function openSite() {
+
+    const opening = document.getElementById("opening");
+    const main = document.getElementById("mainContent");
+
+    opening.style.transition = "opacity .7s ease, transform .7s ease";
+    opening.style.opacity = "0";
+    opening.style.transform = "scale(1.04)";
+
+    setTimeout(function () {
+
+        opening.style.display = "none";
+
+        main.style.display = "block";
+
+        window.scrollTo(0, 0);
+
+        createHearts(25);
+
+    }, 700);
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const song = document.getElementById("song");
+const musicButton = document.getElementById("musicButton");
+
+let playing = false;
+
+function toggleMusic() {
+
+    if (!playing) {
+
+        song.play();
+
+        musicButton.innerHTML = "❚❚ Pause our song";
+
+        playing = true;
+
+    } else {
+
+        song.pause();
+
+        musicButton.innerHTML = "▶ Play our song";
+
+        playing = false;
+
+    }
+
+}
+
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        Math.random() > .5 ? "♡" : "♥";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.bottom =
+        "-30px";
+
+    heart.style.fontSize =
+        (Math.random() * 22 + 10) + "px";
+
+    heart.style.animationDuration =
+        (Math.random() * 5 + 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function () {
+
+        heart.remove();
+
+    }, 11000);
+
+}
+
+
+function createHearts(amount) {
+
+    for (let i = 0; i < amount; i++) {
+
+        setTimeout(function () {
+
+            createHeart();
+
+        }, i * 120);
+
+    }
+
+}
+
+
+/* =========================================================
+   RANDOM HEARTS
+========================================================= */
+
+setInterval(function () {
+
+    const main =
+        document.getElementById("mainContent");
+
+    if (
+        main &&
+        main.style.display !== "none"
+    ) {
+
+        if (Math.random() > .55) {
+
+            createHeart();
+
+        }
+
+    }
+
+}, 2500);
+
+
+/* =========================================================
+   PHOTO CLICK
+========================================================= */
+
+document.querySelectorAll(".photo").forEach(function(photo) {
+
+    photo.addEventListener("click", function() {
+
+        photo.style.zIndex = "100";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
